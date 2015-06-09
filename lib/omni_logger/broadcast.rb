@@ -3,14 +3,6 @@ require "logger"
 module OmniLogger
   class Broadcast
 
-    LOG_LEVELS = {
-      debug: Logger::Severity::DEBUG,
-      info: Logger::Severity::INFO,
-      warn: Logger::Severity::WARN,
-      fatal: Logger::Severity::FATAL,
-      error: Logger::Severity::ERROR
-    }
-
     def initialize(args={})
       @loggers = []
       self.level = args[:level] || :debug
@@ -25,12 +17,12 @@ module OmniLogger
     end
 
     def level=(level_to_log)
-      @level = LOG_LEVELS.fetch(level_to_log, level_to_log)
+      @level = OmniLogger::LOG_LEVELS.fetch(level_to_log, level_to_log)
       @loggers.each { |logger| logger.level = @level }
     end
 
     def level
-      LOG_LEVELS.rassoc(@level).first
+      OmniLogger::LOG_LEVELS.rassoc(@level).first
     end
 
     def close
