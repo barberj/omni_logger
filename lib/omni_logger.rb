@@ -1,5 +1,5 @@
 require "omni_logger/version"
+require "omni_logger/broadcast"
 
 module OmniLogger
-  # Your code goes here...
 end
