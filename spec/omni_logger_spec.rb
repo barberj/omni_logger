@@ -11,6 +11,13 @@ describe OmniLogger do
     expect(OmniLogger::VERSION).not_to be nil
   end
 
+  describe '#new' do
+    it 'initializes with loggers' do
+      broadcaster = OmniLogger::Broadcast.new(loggers: [FakeLogger.new])
+      expect(broadcaster.instance_variable_get(:@loggers).size).to eq(1)
+    end
+  end
+
   describe '#level' do
     it 'defaults to debug' do
       expect(OmniLogger::Broadcast.new.level).

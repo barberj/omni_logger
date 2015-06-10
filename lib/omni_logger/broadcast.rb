@@ -7,7 +7,7 @@ module OmniLogger
       @loggers = [].concat(OmniLogger.default_loggers)
       self.level = args[:level] || :debug
 
-      Array(args[:loggers]).each { |logger| add_logger }
+      Array(args[:loggers]).each { |logger| add_logger(logger) }
     end
 
     def add_logger(logger)
