@@ -9,4 +9,16 @@ module OmniLogger
     fatal: Logger::Severity::FATAL,
     error: Logger::Severity::ERROR
   }
+
+  def self.default_loggers
+    @default_loggers ||= []
+  end
+
+  def self.add_default_loggers(*loggers)
+    default_loggers.concat(loggers)
+  end
+
+  def self.reset_default_loggers
+    @default_loggers = []
+  end
 end

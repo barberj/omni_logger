@@ -4,7 +4,7 @@ module OmniLogger
   class Broadcast
 
     def initialize(args={})
-      @loggers = []
+      @loggers = [].concat(OmniLogger.default_loggers)
       self.level = args[:level] || :debug
 
       Array(args[:loggers]).each { |logger| add_logger }
