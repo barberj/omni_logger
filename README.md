@@ -20,13 +20,13 @@ Or install it yourself as:
 
 ## Usage
 
-log_1 = Logger.new(STDOUT)
-log_2 = Logger.new(File.open('/tmp/foo', 'a'))
+    log_1 = Logger.new(STDOUT)
+    log_2 = Logger.new(File.open('/tmp/foo', 'a'))
 
-multi_logger = OmniLogger::Broadcast.new(:level => :warn, :loggers => log_1)
-multi_logger.add_logger(log_2)
+    multi_logger = OmniLogger::Broadcast.new(level: :warn, loggers: log_1)
+    multi_logger.add_logger(log_2)
 
-multi_logger.warn('Something interesting happened.')
+    multi_logger.warn('Something interesting happened.')
 
 ## Development
 
