@@ -1,3 +1,3 @@
-module OmniLogger
-  VERSION = "0.1.2"
+class OmniLogger
+  VERSION = "0.1.3"
 end
