@@ -1,4 +1,6 @@
-# OmniLogger
+# OmniLogger 
+
+[![Code Climate](https://codeclimate.com/github/barberj/omni_logger/badges/gpa.svg)](https://codeclimate.com/github/barberj/omni_logger)
 
 Log to multiple logs. Thanks and appreciation to @clowder for the original [gist](https://gist.github.com/clowder/3639600)
 
