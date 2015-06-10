@@ -8,11 +8,10 @@ module OmniLogger
       self.level = args[:level] || :debug
 
       Array(args[:loggers]).each { |logger| add_logger }
-
     end
 
     def add_logger(logger)
-      logger.level = level
+      logger.level = @level
       @loggers << logger
     end
 
