@@ -51,6 +51,10 @@ class OmniLogger
     @loggers.each { |logger| logger.add(level, args) }
   end
 
+  def <<(msg)
+    @loggers.map { |logger| logger << msg }
+  end
+
   Logger::Severity.constants.each do |level|
     define_method(level.downcase) do |*args|
       @loggers.each { |logger| logger.send(level.downcase, args) }
