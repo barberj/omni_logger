@@ -48,7 +48,7 @@ class OmniLogger
   end
 
   def add(level, *args)
-    @loggers.each { |logger| logger.add(level, args) }
+    @loggers.each { |logger| logger.add(level, *args) }
   end
 
   def <<(msg)
